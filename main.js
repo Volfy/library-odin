@@ -27,3 +27,7 @@ console.log(theHobbit.getInfo());
 addBookToLibrary(theHobbit);
 
 console.log(myLibrary)
+
+function displayBooks () {
+    // To do //
+}
