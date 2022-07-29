@@ -1,4 +1,29 @@
 let myLibrary = [];
+const table = document.querySelector(".library-table");
+const addBookBtn = document.querySelector('.add-book');
+const addBookForm = document.querySelector('.add-book-form');
+let ranFlag = false;
+let tableLength = 0;
+
+addBookBtn.addEventListener('click', addBook);
+addBookForm.addEventListener('submit', () => {
+    event.preventDefault();
+    addBookToLibrary(
+    new Book(
+        document.querySelector('#title-input').value,
+        document.querySelector('#author-input').value,
+        document.querySelector('#pages-input').value,
+        document.querySelector('#read-input').checked ));
+        displayBooks();
+        addBookForm.style.cssText= "display: none;";
+    });
+
+
+// const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
+// const mangaGuide = new Book('The Manga Guide to WebDev', 'Fake Name', 200, true);
+// addBookToLibrary(theHobbit);
+// addBookToLibrary(mangaGuide);
+
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -21,13 +46,48 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
-console.log(theHobbit.getInfo());
-
-addBookToLibrary(theHobbit);
-
-console.log(myLibrary)
-
 function displayBooks () {
-    // To do //
+    if(ranFlag){
+        for (i=0; i<tableLength; i++) {
+            table.deleteRow(-1);
+        }
+    }
+    
+    myLibrary.forEach((book) => {
+        let row = table.insertRow();
+        let cellTitle = row.insertCell(0);
+        let cellAuthor = row.insertCell(1);
+        let cellPages = row.insertCell(2);
+        let cellRead = row.insertCell(3);
+        let cellDelete = row.insertCell(4);
+
+        cellTitle.textContent = book.title;
+        cellAuthor.textContent = book.author;
+        cellPages.textContent = book.pages;
+        cellRead.innerHTML = book.read ? '<input type="checkbox" id="read-table" data-numr="'+myLibrary.indexOf(book)+'" checked>' : '<input type="checkbox" data-numr="'+myLibrary.indexOf(book)+'" id="read-table">';
+        cellDelete.innerHTML = "<button class='rmv-book' data-num='"+myLibrary.indexOf(book)+"'>X</button>";
+        document.querySelector('[data-num="'+myLibrary.indexOf(book)+'"]').addEventListener('click', removeBook);
+    })
+    document.querySelectorAll("#read-table").forEach( (check) => {
+        check.addEventListener("change", changeRead);
+    });
+    ranFlag = true;
+    tableLength = myLibrary.length;
 }
+
+function addBook () {
+    addBookForm.style.cssText= "display: block;";
+}
+
+function removeBook () {
+    let index = this.dataset.num;
+    myLibrary.splice(index, 1);
+    displayBooks();
+}
+
+function changeRead () {
+    if (this.checked) {
+        myLibrary[this.dataset.numr].read = true;
+    } else {myLibrary[this.dataset.numr].read = false;}
+}
+
