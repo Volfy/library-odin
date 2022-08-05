@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+    --bg-color: #FFF6EB;
+    --form-bg-color: #FFE4C2;
+    --text-color: #38281A;
+    --alt-color: #FFEDD6;
+    --shadow-color: #c2b09880;
+    --del-btn-color: #e21851;
+    --add-btn-color: #d7802e;
+}
+
 html,
 body {
     margin: 0;
@@ -13,9 +23,10 @@ body, main, .container {
 }
 body {
     align-items: center;
-    background-color: aliceblue;
+    background-color: var(--bg-color);
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 0.03em;
+    color: var(--text-color);
 }
 
 .container {
@@ -24,11 +35,6 @@ body {
 }
 .head {
     height: min(70px, 20%);
-}
-
-thead, tfoot {
-    background-color: aliceblue;
-    
 }
 
 table {
@@ -57,10 +63,10 @@ table {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: rgb(226, 236, 243);
+    background-color: var(--alt-color);
 }
 tbody tr:nth-child(even) {
-    background-color: rgb(236, 240, 244);
+    background-color: var(--bg-color);
 }
 
 td, th {
@@ -81,9 +87,10 @@ button {
 .add-book {
     padding: 10px;
     font-size: 4em;
+    color: var(--text-color);
 }
 .add-book:hover {
-    color: red;
+    color: var(--add-btn-color);
 }
 
 
@@ -93,11 +100,11 @@ button {
     align-self: center;
 }
 .add-book-form {
-    background-color: aliceblue;
+    background-color: var(--form-bg-color);
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 10%;
-    box-shadow: 1px 1px 12px grey;
+    border: 0.2px solid var(--shadow-color);
+    border-radius: 25px;
+    box-shadow: 4px 5px 12px var(--shadow-color);
     text-align: left;
 }
 .add-book-form * {
@@ -116,26 +123,31 @@ button {
     margin-left: auto;
     margin-right: auto;
     padding: 0.8em;
-    border: 1px solid orange;
-    border-radius: 50%;
+    border: 1px solid var(--add-btn-color);
+    background-color: var(--add-btn-color);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
 }
 .form-submit:hover {
-    color: red;
-    background-color: lightblue;
+    color: var(--add-btn-color);
+    background-color: white;
+    border: 1px solid white;
     
 }
 .rmv-book {
-    border: 1px solid red;
+    border: 1px solid var(--del-btn-color);
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     color: white;
     border-radius: 10px;
-    background-color: red;
+    background-color: var(--del-btn-color);
+    font-weight: 600;
 }
 
 .rmv-book:hover {
-    color: red;
+    color: var(--del-btn-color);
     background-color: white;
     border: 1px solid white;
 }
