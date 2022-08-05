@@ -7,11 +7,14 @@ body {
 body, main, .container {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+}
+body {
     align-items: center;
+    background-color: aliceblue;
 }
 
 .container {
-    align-items: stretch;
     width: min(1000px, 60%);
     text-align: center;
 }
@@ -20,7 +23,6 @@ body, main, .container {
 }
 
 main {
-    align-items: stretch;
     margin-top: 30px;
 }
 
@@ -38,11 +40,22 @@ main {
     box-shadow: 0px 1px 18px grey;
 }
 
+thead, tfoot {
+    background-color: orange;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: orangered;
+}
+tbody tr:nth-child(even) {
+    background-color: blue;
+}
+
 .add-book {
     border: 0;
     background: none;
     width: 100%;
 }
-.add-book:hover {
+tfoot td:hover {
     background-color: red;
 }
