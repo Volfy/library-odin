@@ -1,0 +1,48 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, main, .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    align-items: stretch;
+    width: min(1000px, 60%);
+    text-align: center;
+}
+.head {
+    height: min(70px, 20%);
+}
+
+main {
+    align-items: stretch;
+    margin-top: 30px;
+}
+
+.head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: min(70px, 20%);
+    z-index: -1;
+    background-color: lightgray;
+    box-shadow: 0px 1px 18px grey;
+}
+
+.add-book {
+    border: 0;
+    background: none;
+    width: 100%;
+}
+.add-book:hover {
+    background-color: red;
+}

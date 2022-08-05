@@ -4,37 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <title>Library App</title>
 </head>
 <body>
-    <button class="add-book">New Book</button>
-    <table class="library-table">
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Pages</th>
-                <th scope="col">Read</th>
-                <th scope="col">Delete</th>
-            </tr>
-        </thead>
-        <tbody>
+    
+    <div class="container">
+        <div class="head">
+            <h1>Library App</h1>
+        </div>
 
-        </tbody>
-    </table>
-
-    <form class="add-book-form" action="" method="GET" hidden>
-        <label for="title-input">Title</label>
-        <input type="text" id="title-input">
-        <label for="author-input">Author</label>
-        <input type="text" id="author-input">
-        <label for="pages-input">Pages</label>
-        <input type="number" id="pages-input">
-        <label for="read-input">Have you read it?</label>
-        <input type="checkbox" id="read-input">
-        <button class="form-submit">Add Book</button>
-    </form>
+        <main>
+            <table class="library-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Pages</th>
+                        <th scope="col">Read</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <button class="add-book">+</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="form-div">
+                <form class="add-book-form" action="" method="GET" hidden>
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input">
+                    <label for="author-input">Author</label>
+                    <input type="text" id="author-input">
+                    <label for="pages-input">Pages</label>
+                    <input type="number" id="pages-input">
+                    <label for="read-input">Have you read it?</label>
+                    <input type="checkbox" id="read-input">
+                    <button class="form-submit">Add Book</button>
+                </form>
+            </div>
+        </main>
+    </div>
     
 </body>
 </html>
