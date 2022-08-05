@@ -1,5 +1,5 @@
 let myLibrary = [];
-const table = document.querySelector(".library-table");
+const table = document.querySelector(".library-table tbody");
 const addBookBtn = document.querySelector('.add-book');
 const addBookForm = document.querySelector('.add-book-form');
 let ranFlag = false;
