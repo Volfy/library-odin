@@ -59,3 +59,22 @@ tbody tr:nth-child(even) {
 tfoot td:hover {
     background-color: red;
 }
+
+.form-div {
+    position: fixed;
+    top: min(100px, 30%);
+    align-self: center;
+}
+.add-book-form {
+    background-color: aliceblue;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10%;
+    box-shadow: 1px 1px 12px grey;
+}
+.add-book-form * {
+    display: block;
+}
+.rd {
+    display: inline;
+}
