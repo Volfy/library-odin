@@ -91,6 +91,7 @@ function displayBooks () {
         let cellPages = row.insertCell(2);
         let cellRead = row.insertCell(3);
         let cellDelete = row.insertCell(4);
+        cellDelete.classList += "del-btn";
 
         cellTitle.textContent = book.title;
         cellAuthor.textContent = book.author;
