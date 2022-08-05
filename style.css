@@ -26,33 +26,51 @@ body {
     height: min(70px, 20%);
 }
 
-main {
-    margin-top: 30px;
-}
-
-.head::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: min(70px, 20%);
-    z-index: -1;
-    background-color: lightgray;
-    box-shadow: 0px 1px 18px grey;
-}
-
 thead, tfoot {
-    background-color: orange;
+    background-color: aliceblue;
+    
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
+}
+.title-col {
+    width: 40%;
+}
+
+.auth-col {
+    width: 24%;
+}
+.pgs {
+    width: 12%;
+    
+}
+.rd-col {
+    width: 10%;
+    
+}
+.rm-col {
+    width: 14%;
+    
 }
 
 tbody tr:nth-child(odd) {
-    background-color: orangered;
+    background-color: rgb(226, 236, 243);
 }
 tbody tr:nth-child(even) {
-    background-color: blue;
+    background-color: rgb(236, 240, 244);
+}
+
+td, th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+tfoot td {
+    padding-top: 0;
+    width: 100%;
+    text-align: center;
 }
 
 button {
@@ -61,10 +79,11 @@ button {
 }
 
 .add-book {
-    width: 100%;
+    padding: 10px;
+    font-size: 4em;
 }
-tfoot td:hover {
-    background-color: red;
+.add-book:hover {
+    color: red;
 }
 
 
@@ -79,6 +98,7 @@ tfoot td:hover {
     border: 1px solid black;
     border-radius: 10%;
     box-shadow: 1px 1px 12px grey;
+    text-align: left;
 }
 .add-book-form * {
     display: block;
@@ -105,8 +125,25 @@ tfoot td:hover {
     
 }
 .rmv-book {
-    width: 100%;
+    border: 1px solid red;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: red;
 }
-.del-btn:hover {
-    background-color: black;
+
+.rmv-book:hover {
+    color: red;
+    background-color: white;
+    border: 1px solid white;
+}
+
+#read-table {
+    /* too annoying */
+}
+
+.cent {
+    text-align: center;
 }

@@ -91,13 +91,15 @@ function displayBooks () {
         let cellPages = row.insertCell(2);
         let cellRead = row.insertCell(3);
         let cellDelete = row.insertCell(4);
-        cellDelete.classList += "del-btn";
+        cellDelete.classList += "del-btn cent";
+        cellRead.classList += "cent";
+        cellPages.classList += "cent";
 
         cellTitle.textContent = book.title;
         cellAuthor.textContent = book.author;
         cellPages.textContent = book.pages;
         cellRead.innerHTML = book.read ? '<input type="checkbox" id="read-table" data-numr="'+myLibrary.indexOf(book)+'" checked>' : '<input type="checkbox" data-numr="'+myLibrary.indexOf(book)+'" id="read-table">';
-        cellDelete.innerHTML = "<button class='rmv-book' data-num='"+myLibrary.indexOf(book)+"'>X</button>";
+        cellDelete.innerHTML = "<button class='rmv-book' data-num='"+myLibrary.indexOf(book)+"'>Delete</button>";
         document.querySelector('[data-num="'+myLibrary.indexOf(book)+'"]').addEventListener('click', removeBook);
     })
     document.querySelectorAll("#read-table").forEach( (check) => {
