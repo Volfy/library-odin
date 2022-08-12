@@ -98,11 +98,11 @@ function displayBooks () {
         cellTitle.textContent = book.title;
         cellAuthor.textContent = book.author;
         cellPages.textContent = book.pages;
-        cellRead.innerHTML = book.read ? '<input type="checkbox" id="read-table" data-numr="'+myLibrary.indexOf(book)+'" checked>' : '<input type="checkbox" data-numr="'+myLibrary.indexOf(book)+'" id="read-table">';
+        cellRead.innerHTML = book.read ? '<input type="checkbox" class="read-table" data-numr="'+myLibrary.indexOf(book)+'" checked>' : '<input type="checkbox" data-numr="'+myLibrary.indexOf(book)+'" class="read-table">';
         cellDelete.innerHTML = "<button class='rmv-book' data-num='"+myLibrary.indexOf(book)+"'>Delete</button>";
         document.querySelector('[data-num="'+myLibrary.indexOf(book)+'"]').addEventListener('click', removeBook);
     })
-    document.querySelectorAll("#read-table").forEach( (check) => {
+    document.querySelectorAll(".read-table").forEach( (check) => {
         check.addEventListener("change", changeRead);
     });
     ranFlag = true;
